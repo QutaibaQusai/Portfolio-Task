@@ -5,17 +5,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 /* Root */
 :root{
     --header-background:#6919ff;
     --main-color:#fff;
+    --main-background:#060918;
+}
+
+::selection{
+    background: var(--header-background);
+}
+/* color of scrollbar */
+::-webkit-scrollbar{
+    width: 14px;
+}
+::-webkit-scrollbar-thumb{
+    background: #7b7b7b;
 }
 
 body{
     width: 100%;
     font-family: 'Inter', sans-serif;
-
+    background-color: var(--main-background);
 }
 header{
     width: 100%;
@@ -25,16 +38,19 @@ header{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-attachment: fixed;
     
 }
 
-header  nav{
-    position: fixed;
+header nav{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 25px 0;
+    position: fixed;
+    z-index: 999;
+   /* background-color: rgba(0, 0, 0, 0.8); */
 }
 nav ul{
     list-style-type: none;
@@ -136,4 +152,49 @@ header  ol li a:hover{
     color: #fff;
     width: 35%;
     letter-spacing: 2px;
+}
+/* style for section 1:about me */
+.about-me{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.about-row{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.about-col{
+    width: 50%;
+}
+.about-col:last-child{
+    padding: 0 50px;
+}
+.about-col video{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.about-col span{
+    font-size: 22px;
+    line-height: 28px;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #6919ff;
+    letter-spacing: 1px;
+}
+.about-col h2{
+    line-height: 1.8;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.about-col p{
+    text-transform: capitalize;
+    color: #fff;
+    line-height: 1.825;
+    font-size: 18px;
+    
 }
